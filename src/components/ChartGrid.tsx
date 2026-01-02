@@ -36,8 +36,12 @@ export function ChartGrid({ charts }: ChartGridProps) {
               onClick={() => setSelectedChart(chart)}
               className="flex-1 text-left min-w-0 hover:opacity-80 transition-opacity"
             >
-              <h3 className="font-semibold text-foreground truncate">{chart.title}</h3>
-              <p className="text-sm text-muted-foreground truncate">{chart.artist}</p>
+              <h3 className="font-semibold text-foreground truncate">
+                {chart.title}
+              </h3>
+              <p className="text-sm text-muted-foreground truncate">
+                {chart.artist}
+              </p>
 
               {/* Difficulty Badges */}
               <div className="flex flex-wrap gap-1 mt-2">
@@ -45,9 +49,13 @@ export function ChartGrid({ charts }: ChartGridProps) {
                   <div
                     key={diff.difficulty}
                     className="px-2 py-0.5 rounded text-xs font-bold text-white"
-                    style={{ backgroundColor: getDifficultyColor(diff.difficulty) }}
+                    style={{
+                      backgroundColor: getDifficultyColor(diff.difficulty),
+                    }}
                   >
-                    {diff.difficulty === "Re:MASTER" ? "Re:★" : diff.difficulty[0]}
+                    {diff.difficulty === "Re:MASTER"
+                      ? "Re:★"
+                      : diff.difficulty[0]}
                     {diff.level}
                   </div>
                 ))}
@@ -62,7 +70,10 @@ export function ChartGrid({ charts }: ChartGridProps) {
         ))}
       </div>
 
-      <ChartModal chart={selectedChart} onClose={() => setSelectedChart(null)} />
+      <ChartModal
+        chart={selectedChart}
+        onClose={() => setSelectedChart(null)}
+      />
     </>
   )
 }

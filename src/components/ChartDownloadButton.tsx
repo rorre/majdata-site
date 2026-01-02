@@ -9,7 +9,10 @@ interface ChartDownloadButtonProps {
   showWithoutMv?: boolean
 }
 
-export function ChartDownloadButton({ chart, showWithoutMv = false }: ChartDownloadButtonProps) {
+export function ChartDownloadButton({
+  chart,
+  showWithoutMv = false,
+}: ChartDownloadButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const hasMv = !!chart.mv_link

@@ -1,12 +1,12 @@
-import { Twitter } from "lucide-react";
-import { SiDiscord } from "@icons-pack/react-simple-icons";
-import { Button } from "@/components/ui/button";
-import Shizu from "/src/shizu.png";
+import { Twitter } from "lucide-react"
+import { SiDiscord } from "@icons-pack/react-simple-icons"
+import { Button } from "@/components/ui/button"
+import Shizu from "/src/shizu.png"
 
 interface HeroLink {
-  icon: React.ReactNode;
-  label: string;
-  url: string;
+  icon: React.ReactNode
+  label: string
+  url: string
 }
 
 export function Hero() {
@@ -21,7 +21,7 @@ export function Hero() {
       label: "Twitter",
       url: "https://twitter.com/FelisSkunk",
     },
-  ];
+  ]
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-muted to-muted/50">
@@ -58,5 +58,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }

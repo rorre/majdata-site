@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { Hero } from "@/components/Hero";
-import { ChartGrid } from "@/components/ChartGrid";
-import { Toaster } from "@/components/ui/sonner";
-import { loadCharts } from "@/lib/chart";
-import type { Chart } from "@/lib/chart";
+import { useEffect, useState } from "react"
+import { Hero } from "@/components/Hero"
+import { ChartGrid } from "@/components/ChartGrid"
+import { Toaster } from "@/components/ui/sonner"
+import { loadCharts } from "@/lib/chart"
+import type { Chart } from "@/lib/chart"
 
 export function App() {
-  const [charts, setCharts] = useState<Chart[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [charts, setCharts] = useState<Chart[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadCharts().then((loadedCharts) => {
-      setCharts(loadedCharts);
-      setLoading(false);
-    });
-  }, []);
+      setCharts(loadedCharts)
+      setLoading(false)
+    })
+  }, [])
 
   return (
     <>
@@ -43,7 +43,7 @@ export function App() {
         </section>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -8,7 +8,9 @@ interface DialogContextValue {
   onOpenChange: (open: boolean) => void
 }
 
-const DialogContext = React.createContext<DialogContextValue | undefined>(undefined)
+const DialogContext = React.createContext<DialogContextValue | undefined>(
+  undefined
+)
 
 function useDialogContext() {
   const context = React.useContext(DialogContext)
@@ -103,7 +105,10 @@ const DialogHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("sticky top-0 flex justify-end p-4 bg-background border-b border-border", className)}
+    className={cn(
+      "sticky top-0 flex justify-end p-4 bg-background border-b border-border",
+      className
+    )}
     {...props}
   />
 )
@@ -129,7 +134,10 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h2
     ref={ref}
-    className={cn("text-lg font-semibold leading-none tracking-tight", className)}
+    className={cn(
+      "text-lg font-semibold leading-none tracking-tight",
+      className
+    )}
     {...props}
   />
 ))

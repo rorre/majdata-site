@@ -1,32 +1,32 @@
-import { getDifficultyColor } from "@/lib/chart";
-import type { Chart, DifficultyName } from "@/lib/chart";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { getDifficultyColor } from "@/lib/chart"
+import type { Chart, DifficultyName } from "@/lib/chart"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { ChartDownloadButton } from "./ChartDownloadButton";
-import ReactMarkdown from "react-markdown";
+} from "@/components/ui/card"
+import { ChartDownloadButton } from "./ChartDownloadButton"
+import ReactMarkdown from "react-markdown"
 
 interface ChartModalProps {
-  chart: Chart | null;
-  onClose: () => void;
+  chart: Chart | null
+  onClose: () => void
 }
 
 export function ChartModal({ chart, onClose }: ChartModalProps) {
-  const open = !!chart;
+  const open = !!chart
 
   const handleOpenChange = (newOpen: boolean) => {
     if (!newOpen) {
-      onClose();
+      onClose()
     }
-  };
+  }
 
-  if (!chart) return null;
+  if (!chart) return null
 
-  const videoId = extractYouTubeId(chart.youtube);
+  const videoId = extractYouTubeId(chart.youtube)
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -96,16 +96,16 @@ export function ChartModal({ chart, onClose }: ChartModalProps) {
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }
 
 interface DifficultyBadgeProps {
-  difficulty: string;
-  level: string;
+  difficulty: string
+  level: string
 }
 
 function DifficultyBadge({ difficulty, level }: DifficultyBadgeProps) {
-  const bgColor = getDifficultyColor(difficulty as DifficultyName);
+  const bgColor = getDifficultyColor(difficulty as DifficultyName)
 
   return (
     <div
@@ -117,10 +117,10 @@ function DifficultyBadge({ difficulty, level }: DifficultyBadgeProps) {
         <span className="text-lg leading-none">{level}</span>
       </div>
     </div>
-  );
+  )
 }
 
 function extractYouTubeId(url: string): string | null {
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
-  return match?.[1] || null;
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+  return match?.[1] || null
 }

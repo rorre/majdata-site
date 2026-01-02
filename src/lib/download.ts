@@ -10,7 +10,10 @@ function getFileExtension(url: string): string {
   }
 }
 
-async function downloadFile(url: string, onProgress: (progress: number) => void): Promise<Blob> {
+async function downloadFile(
+  url: string,
+  onProgress: (progress: number) => void
+): Promise<Blob> {
   const response = await fetch(url)
 
   if (!response.ok) {
@@ -116,7 +119,10 @@ export async function downloadChartAsAdx(
     }
 
     // Generate zip
-    const zipBlob = await zip.generateAsync({ type: "blob", compression: "STORE" })
+    const zipBlob = await zip.generateAsync({
+      type: "blob",
+      compression: "STORE",
+    })
 
     // Download zip
     const url = URL.createObjectURL(zipBlob)
@@ -138,6 +144,9 @@ export async function downloadChartAsAdx(
   toast.promise(downloadPromise, {
     loading: `Downloading ${artist} - ${title}...`,
     success: (message) => message,
-    error: (error) => `Failed to download: ${error instanceof Error ? error.message : "Unknown error"}`,
+    error: (error) =>
+      `Failed to download: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`,
   })
 }

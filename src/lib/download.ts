@@ -68,7 +68,7 @@ export async function downloadChartAsAdx(
         zip.file("bg.mp4", blob)
         completedFiles++
       } catch (error) {
-        console.error("Failed to download MV:", error)
+        throw new Error("Failed to download MV: " + error)
       }
     }
 
@@ -83,7 +83,7 @@ export async function downloadChartAsAdx(
         zip.file(filename, blob)
         completedFiles++
       } catch (error) {
-        console.error("Failed to download jacket:", error)
+        throw new Error("Failed to download jacket: " + error)
       }
     }
 
@@ -98,7 +98,7 @@ export async function downloadChartAsAdx(
         zip.file(filename, blob)
         completedFiles++
       } catch (error) {
-        console.error("Failed to download audio:", error)
+        throw new Error("Failed to download audio: " + error)
       }
     }
 
@@ -111,7 +111,7 @@ export async function downloadChartAsAdx(
         zip.file("maidata.txt", blob)
         completedFiles++
       } catch (error) {
-        console.error("Failed to download chart:", error)
+        throw new Error("Failed to download chart: " + error)
       }
     }
 

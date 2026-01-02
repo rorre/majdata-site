@@ -4,7 +4,7 @@ artist: antiPLUR
 jacket: https://majdata.shizufur.art/speedoflink/bg.jpg
 audio_link: https://majdata.shizufur.art/speedoflink/track.mp3
 chart_link: https://majdata.shizufur.art/speedoflink/maidata.txt
-youtube: https://www.youtube.com/watch?v=nf-dsBSqaHM
+youtube: https://www.youtube.com/watch?v=8teGc-PLYYI
 difficulties:
   - difficulty: MASTER
     level: 14+

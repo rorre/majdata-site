@@ -4,7 +4,7 @@ artist: YURiMental
 jacket: https://majdata.shizufur.art/kinounikanaderu/bg.jpg
 audio_link: https://majdata.shizufur.art/kinounikanaderu/track.ogg
 chart_link: https://majdata.shizufur.art/kinounikanaderu/maidata.txt
-youtube: https://www.youtube.com/watch?v=nf-dsBSqaHM
+youtube: https://www.youtube.com/watch?v=OQvpqRf3Urw
 difficulties:
   - difficulty: MASTER
     level: 13+

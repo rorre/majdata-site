@@ -76,7 +76,6 @@ export async function loadCharts(): Promise<Chart[]> {
     const charts: Chart[] = [];
 
     for (const [path, contentPromise] of Object.entries(chartModules)) {
-      console.log(path, contentPromise);
       const filename = path.split("/").pop();
       if (!filename) continue;
 

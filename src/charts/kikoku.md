@@ -1,6 +1,7 @@
 ---
 title: 鬼哭慟哭地獄楽
 artist: Halozy
+additional_keywords: kikoku doukoku jigokuraku
 jacket: https://majdata.shizufur.art/kikoku/bg.jpg
 audio_link: https://majdata.shizufur.art/kikoku/track.mp3
 chart_link: https://majdata.shizufur.art/kikoku/maidata.txt

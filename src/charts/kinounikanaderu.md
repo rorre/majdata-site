@@ -1,6 +1,7 @@
 ---
 title: 昨日に奏でる明日の歌
 artist: YURiMental
+additional_keywords: kinou ni kanaderu ashita no uta
 jacket: https://majdata.shizufur.art/kinounikanaderu/bg.jpg
 audio_link: https://majdata.shizufur.art/kinounikanaderu/track.ogg
 chart_link: https://majdata.shizufur.art/kinounikanaderu/maidata.txt

@@ -14,6 +14,7 @@ export interface ChartMetadata {
   mv_link?: string
   audio_link: string
   chart_link: string
+  additional_keywords?: string
 }
 
 export interface Chart extends ChartMetadata {

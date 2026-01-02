@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react"
 import { Hero } from "@/components/Hero"
 import { ChartGrid } from "@/components/ChartGrid"
+import { SearchBar } from "@/components/SearchBar"
 import { Toaster } from "@/components/ui/sonner"
 import { loadCharts } from "@/lib/chart"
 import type { Chart } from "@/lib/chart"
 
 export function App() {
   const [charts, setCharts] = useState<Chart[]>([])
+  const [filteredCharts, setFilteredCharts] = useState<Chart[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadCharts().then((loadedCharts) => {
       setCharts(loadedCharts)
+      setFilteredCharts(loadedCharts)
       setLoading(false)
     })
   }, [])
@@ -37,7 +40,18 @@ export function App() {
                 </div>
               </div>
             ) : (
-              <ChartGrid charts={charts} />
+              <>
+                <SearchBar charts={charts} onSearch={setFilteredCharts} />
+                {filteredCharts.length === 0 ? (
+                  <div className="flex justify-center items-center py-12">
+                    <div className="text-neutral-600 dark:text-neutral-400">
+                      No charts match your search.
+                    </div>
+                  </div>
+                ) : (
+                  <ChartGrid charts={filteredCharts} />
+                )}
+              </>
             )}
           </div>
         </section>

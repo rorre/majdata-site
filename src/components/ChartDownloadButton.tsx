@@ -6,13 +6,9 @@ import { downloadChartAsAdx } from "@/lib/download"
 
 interface ChartDownloadButtonProps {
   chart: Chart
-  showWithoutMv?: boolean
 }
 
-export function ChartDownloadButton({
-  chart,
-  showWithoutMv = false,
-}: ChartDownloadButtonProps) {
+export function ChartDownloadButton({ chart }: ChartDownloadButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const hasMv = !!chart.mv_link
@@ -32,7 +28,7 @@ export function ChartDownloadButton({
     setIsOpen(false)
   }
 
-  if (!hasMv || !showWithoutMv) {
+  if (!hasMv) {
     return (
       <Button
         size="sm"
@@ -47,7 +43,7 @@ export function ChartDownloadButton({
   }
 
   return (
-    <div className="relative">
+    <div className="relative w-fit">
       <Button
         size="sm"
         variant="outline"
